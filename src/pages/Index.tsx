@@ -10,7 +10,7 @@ import Footer from '@/components/Footer';
 
 const Index = () => {
   useEffect(() => {
-    // Animation for elements that enter the viewport
+    // Enhanced animation for elements that enter the viewport
     const animateOnScroll = () => {
       const sections = document.querySelectorAll('section');
       
@@ -22,6 +22,16 @@ const Index = () => {
               // Use className instead of style for TypeScript compatibility
               entry.target.classList.remove('opacity-0');
               entry.target.classList.add('opacity-100');
+              
+              // Add a staggered animation to child elements
+              const animatedChildren = entry.target.querySelectorAll('.stagger-animate');
+              animatedChildren.forEach((child, index) => {
+                setTimeout(() => {
+                  child.classList.add('animate-scale-in');
+                  child.classList.remove('opacity-0');
+                  child.classList.add('opacity-100');
+                }, index * 150);
+              });
             }
           });
         },
@@ -37,6 +47,29 @@ const Index = () => {
         observer.observe(section);
       });
       
+      // Add a mouse movement parallax effect to the hero section
+      const heroSection = document.querySelector('#hero');
+      if (heroSection) {
+        const handleMouseMove = (e) => {
+          const decorativeElements = heroSection.querySelectorAll('.decorative');
+          decorativeElements.forEach((el) => {
+            const speed = el.getAttribute('data-speed') || 0.05;
+            const x = (window.innerWidth - e.pageX * speed) / 100;
+            const y = (window.innerHeight - e.pageY * speed) / 100;
+            el.style.transform = `translateX(${x}px) translateY(${y}px)`;
+          });
+        };
+        
+        heroSection.addEventListener('mousemove', handleMouseMove);
+        
+        return () => {
+          heroSection.removeEventListener('mousemove', handleMouseMove);
+          sections.forEach((section) => {
+            observer.unobserve(section);
+          });
+        };
+      }
+      
       return () => {
         sections.forEach((section) => {
           observer.unobserve(section);
@@ -50,7 +83,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <main>
+      <main className="overflow-hidden">
         <Hero />
         <Features />
         <Community />

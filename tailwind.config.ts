@@ -68,6 +68,8 @@ export default {
 					blue: '#3B82F6',
 					teal: '#0EA5E9',
 					coral: '#F87171',
+					emerald: '#10B981',
+					indigo: '#6366F1',
 				}
 			},
 			fontFamily: {
@@ -119,6 +121,20 @@ export default {
 				'scale-in': {
 					'0%': { transform: 'scale(0.95)', opacity: '0' },
 					'100%': { transform: 'scale(1)', opacity: '1' }
+				},
+				'blob': {
+					'0%': { transform: 'translate(0px, 0px) scale(1)' },
+					'33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+					'66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+					'100%': { transform: 'translate(0px, 0px) scale(1)' }
+				},
+				'spin-slow': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
+				},
+				'text-shimmer': {
+					'0%': { backgroundPosition: '100% 50%' },
+					'100%': { backgroundPosition: '0% 50%' }
 				}
 			},
 			animation: {
@@ -129,7 +145,10 @@ export default {
 				'pulse': 'pulse 2s infinite',
 				'bounce': 'bounce 2s infinite',
 				'float': 'float 3s ease-in-out infinite',
-				'scale-in': 'scale-in 0.3s ease-out'
+				'scale-in': 'scale-in 0.3s ease-out',
+				'blob': 'blob 7s infinite',
+				'spin-slow': 'spin-slow 15s linear infinite',
+				'text-shimmer': 'text-shimmer 2s infinite'
 			}
 		}
 	},
