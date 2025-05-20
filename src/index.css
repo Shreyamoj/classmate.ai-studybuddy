@@ -126,4 +126,22 @@
   .card-hover {
     @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
   }
+  
+  /* Animation delay utilities */
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
+
+/* Custom curved clip paths */
+.clip-curve-top {
+  clip-path: ellipse(100% 55% at 48% 44%);
+}
+
+.clip-curve-bottom {
+  clip-path: ellipse(100% 55% at 52% 56%);
 }

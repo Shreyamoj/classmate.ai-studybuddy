@@ -70,6 +70,9 @@ export default {
 					coral: '#F87171',
 					emerald: '#10B981',
 					indigo: '#6366F1',
+				},
+				gray: {
+					750: '#2D3748',
 				}
 			},
 			fontFamily: {

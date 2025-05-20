@@ -50,13 +50,15 @@ const Index = () => {
       // Add a mouse movement parallax effect to the hero section
       const heroSection = document.querySelector('#hero');
       if (heroSection) {
-        const handleMouseMove = (e) => {
+        const handleMouseMove = (e: MouseEvent) => {
           const decorativeElements = heroSection.querySelectorAll('.decorative');
           decorativeElements.forEach((el) => {
-            const speed = el.getAttribute('data-speed') || 0.05;
-            const x = (window.innerWidth - e.pageX * speed) / 100;
-            const y = (window.innerHeight - e.pageY * speed) / 100;
-            el.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            const element = el as HTMLElement;
+            const speed = element.getAttribute('data-speed') || '0.05';
+            const speedValue = parseFloat(speed);
+            const x = (window.innerWidth - e.pageX * speedValue) / 100;
+            const y = (window.innerHeight - e.pageY * speedValue) / 100;
+            element.style.transform = `translateX(${x}px) translateY(${y}px)`;
           });
         };
         
