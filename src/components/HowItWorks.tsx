@@ -27,7 +27,7 @@ const HowItWorks = () => {
   return (
     <section id="how-it-works" className="py-16 bg-slate-50">
       <div className="container mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-fade-in">
           <h2 className="mb-4">How It Works</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Our platform makes learning easy with just a few simple steps.
@@ -40,10 +40,10 @@ const HowItWorks = () => {
           
           <div className="grid lg:grid-cols-3 gap-8 relative z-10">
             {steps.map((step, index) => (
-              <div key={index} className="relative">
-                <div className={`rounded-xl bg-white shadow-md p-8 relative z-10 h-full card-hover`}>
+              <div key={index} className="relative animate-fade-in" style={{animationDelay: `${index * 200}ms`}}>
+                <div className={`rounded-xl bg-white shadow-md p-8 relative z-10 h-full card-hover transition-all duration-500`}>
                   <div 
-                    className={`w-12 h-12 rounded-full bg-${step.color} text-white flex items-center justify-center text-xl font-bold mb-6 mx-auto lg:mx-0`}
+                    className={`w-12 h-12 rounded-full text-white flex items-center justify-center text-xl font-bold mb-6 mx-auto lg:mx-0 transition-transform hover:scale-110`}
                     style={{ backgroundColor: `var(--${step.color})` }}
                   >
                     {step.number}
@@ -54,7 +54,7 @@ const HowItWorks = () => {
 
                 {index < steps.length - 1 && (
                   <div className="hidden lg:block absolute top-1/2 right-0 -translate-y-1/2 -translate-x-1/2 z-20">
-                    <div className="bg-white rounded-full p-2 shadow-md">
+                    <div className="bg-white rounded-full p-2 shadow-md animate-pulse">
                       <ArrowRight className="h-6 w-6 text-primary" />
                     </div>
                   </div>

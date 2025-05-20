@@ -8,7 +8,7 @@ const Hero = () => {
     <section className="pt-28 pb-16 md:pt-32 md:pb-24">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row gap-12 items-center">
-          <div className="flex-1 text-center lg:text-left">
+          <div className="flex-1 text-center lg:text-left animate-fade-in">
             <h1 className="font-bold mb-6">
               <span className="gradient-text">AI-Powered Learning</span>
               <br />
@@ -17,21 +17,21 @@ const Hero = () => {
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0">
               Learn faster and more effectively with personalized AI tutoring and a worldwide community of students. Get answers, feedback, and support 24/7.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button size="lg" className="btn-primary text-lg px-8">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-in" style={{animationDelay: "200ms"}}>
+              <Button size="lg" className="btn-primary text-lg px-8 transition-transform hover:scale-105">
                 Try Now <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="text-lg">
+              <Button size="lg" variant="outline" className="text-lg transition-transform hover:scale-105">
                 Learn More
               </Button>
             </div>
-            <div className="mt-6 text-sm text-muted-foreground">
+            <div className="mt-6 text-sm text-muted-foreground animate-fade-in" style={{animationDelay: "400ms"}}>
               <p>✓ No credit card required &nbsp; ✓ Cancel anytime &nbsp; ✓ Free tier available</p>
             </div>
           </div>
           <div className="flex-1 relative">
-            <div className="relative z-10 bg-white rounded-xl shadow-xl p-4 lg:p-6 max-w-lg mx-auto animate-fade-in">
-              <div className="bg-slate-100 rounded-lg p-4 mb-4">
+            <div className="relative z-10 bg-white rounded-xl shadow-xl p-4 lg:p-6 max-w-lg mx-auto animate-fade-in" style={{animationDelay: "300ms"}}>
+              <div className="bg-slate-100 rounded-lg p-4 mb-4 animate-slide-in" style={{animationDelay: "500ms"}}>
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 rounded-full bg-gradient-to-r from-brand-purple to-brand-blue flex items-center justify-center text-white text-xs">
                     AI
@@ -41,7 +41,7 @@ const Hero = () => {
                   </div>
                 </div>
               </div>
-              <div className="bg-slate-50 rounded-lg p-4">
+              <div className="bg-slate-50 rounded-lg p-4 animate-slide-in" style={{animationDelay: "700ms"}}>
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 rounded-full bg-gradient-to-r from-brand-blue to-brand-teal flex items-center justify-center text-white text-xs">
                     AI
@@ -56,20 +56,20 @@ const Hero = () => {
                   </div>
                 </div>
               </div>
-              <div className="mt-4 relative">
+              <div className="mt-4 relative animate-fade-in" style={{animationDelay: "900ms"}}>
                 <input 
                   type="text" 
                   placeholder="Ask your question..." 
                   className="w-full p-3 pr-12 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50"
                 />
-                <Button className="absolute right-1 top-1 bottom-1 px-3">
+                <Button className="absolute right-1 top-1 bottom-1 px-3 transition-colors hover:bg-primary/90">
                   <ArrowRight className="h-5 w-5" />
                 </Button>
               </div>
             </div>
             {/* Decorative elements */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-brand-purple/10 rounded-full blur-3xl -z-10"></div>
-            <div className="absolute bottom-0 right-0 w-48 h-48 bg-brand-teal/10 rounded-full blur-3xl -z-10"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-brand-purple/10 rounded-full blur-3xl -z-10 animate-pulse"></div>
+            <div className="absolute bottom-0 right-0 w-48 h-48 bg-brand-teal/10 rounded-full blur-3xl -z-10 animate-pulse" style={{animationDelay: "1s"}}></div>
           </div>
         </div>
       </div>
