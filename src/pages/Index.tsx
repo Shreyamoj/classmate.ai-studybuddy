@@ -19,7 +19,9 @@ const Index = () => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.classList.add('animate-fade-in');
-              entry.target.style.opacity = '1';
+              // Use className instead of style for TypeScript compatibility
+              entry.target.classList.remove('opacity-0');
+              entry.target.classList.add('opacity-100');
             }
           });
         },
@@ -31,7 +33,7 @@ const Index = () => {
       );
       
       sections.forEach((section) => {
-        section.style.opacity = '0';
+        section.classList.add('opacity-0');
         observer.observe(section);
       });
       
