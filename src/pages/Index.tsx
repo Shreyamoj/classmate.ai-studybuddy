@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import * as React from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
@@ -9,7 +9,7 @@ import Testimonials from '@/components/Testimonials';
 import Footer from '@/components/Footer';
 
 const Index = () => {
-  useEffect(() => {
+  React.useEffect(() => {
     // Enhanced animation for elements that enter the viewport
     const animateOnScroll = () => {
       const sections = document.querySelectorAll('section');
