@@ -3,6 +3,7 @@ import * as React from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
+import ExamPrep from '@/components/ExamPrep';
 import Community from '@/components/Community';
 import HowItWorks from '@/components/HowItWorks';
 import Testimonials from '@/components/Testimonials';
@@ -88,6 +89,7 @@ const Index = () => {
       <main className="overflow-hidden">
         <Hero />
         <Features />
+        <ExamPrep />
         <Community />
         <HowItWorks />
         <Testimonials />
