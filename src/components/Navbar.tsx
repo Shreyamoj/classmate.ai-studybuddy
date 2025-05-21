@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
 import { Toggle } from "@/components/ui/toggle";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,10 +14,10 @@ const Navbar = () => {
     <header className="fixed w-full z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-sm transition-colors duration-300">
       <div className="container mx-auto py-4">
         <div className="flex justify-between items-center">
-          <a href="#" className="flex items-center gap-2 group">
+          <Link to="/" className="flex items-center gap-2 group">
             <div className="w-8 h-8 rounded-full bg-gradient-to-r from-emerald-500 to-indigo-600 group-hover:animate-pulse transition-all duration-500"></div>
             <span className="text-xl font-heading font-bold bg-gradient-to-r from-emerald-500 to-indigo-600 bg-clip-text text-transparent">StudyBuddy</span>
-          </a>
+          </Link>
 
           {/* Mobile menu button */}
           <div className="flex gap-2 md:hidden">
@@ -38,7 +39,8 @@ const Navbar = () => {
 
           {/* Desktop navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#features" className="text-sm font-medium hover:text-indigo-600 dark:text-gray-200 dark:hover:text-indigo-400 transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-indigo-600 dark:after:bg-indigo-400 after:scale-x-0 after:origin-right after:transition-transform hover:after:scale-x-100 hover:after:origin-left">Features</a>
+            <Link to="/" className="text-sm font-medium hover:text-indigo-600 dark:text-gray-200 dark:hover:text-indigo-400 transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-indigo-600 dark:after:bg-indigo-400 after:scale-x-0 after:origin-right after:transition-transform hover:after:scale-x-100 hover:after:origin-left">Home</Link>
+            <Link to="/exam-prep" className="text-sm font-medium hover:text-indigo-600 dark:text-gray-200 dark:hover:text-indigo-400 transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-indigo-600 dark:after:bg-indigo-400 after:scale-x-0 after:origin-right after:transition-transform hover:after:scale-x-100 hover:after:origin-left">Exam Prep</Link>
             <a href="#community" className="text-sm font-medium hover:text-indigo-600 dark:text-gray-200 dark:hover:text-indigo-400 transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-indigo-600 dark:after:bg-indigo-400 after:scale-x-0 after:origin-right after:transition-transform hover:after:scale-x-100 hover:after:origin-left">Community</a>
             <a href="#how-it-works" className="text-sm font-medium hover:text-indigo-600 dark:text-gray-200 dark:hover:text-indigo-400 transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-indigo-600 dark:after:bg-indigo-400 after:scale-x-0 after:origin-right after:transition-transform hover:after:scale-x-100 hover:after:origin-left">How It Works</a>
             <a href="#pricing" className="text-sm font-medium hover:text-indigo-600 dark:text-gray-200 dark:hover:text-indigo-400 transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-indigo-600 dark:after:bg-indigo-400 after:scale-x-0 after:origin-right after:transition-transform hover:after:scale-x-100 hover:after:origin-left">Pricing</a>
@@ -61,7 +63,8 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-gray-900 shadow-md p-4 animate-scale-in z-50">
             <nav className="flex flex-col gap-4">
-              <a href="#features" className="text-sm font-medium hover:text-indigo-600 dark:text-gray-200 dark:hover:text-indigo-400 transition-colors" onClick={() => setIsMenuOpen(false)}>Features</a>
+              <Link to="/" className="text-sm font-medium hover:text-indigo-600 dark:text-gray-200 dark:hover:text-indigo-400 transition-colors" onClick={() => setIsMenuOpen(false)}>Home</Link>
+              <Link to="/exam-prep" className="text-sm font-medium hover:text-indigo-600 dark:text-gray-200 dark:hover:text-indigo-400 transition-colors" onClick={() => setIsMenuOpen(false)}>Exam Prep</Link>
               <a href="#community" className="text-sm font-medium hover:text-indigo-600 dark:text-gray-200 dark:hover:text-indigo-400 transition-colors" onClick={() => setIsMenuOpen(false)}>Community</a>
               <a href="#how-it-works" className="text-sm font-medium hover:text-indigo-600 dark:text-gray-200 dark:hover:text-indigo-400 transition-colors" onClick={() => setIsMenuOpen(false)}>How It Works</a>
               <a href="#pricing" className="text-sm font-medium hover:text-indigo-600 dark:text-gray-200 dark:hover:text-indigo-400 transition-colors" onClick={() => setIsMenuOpen(false)}>Pricing</a>
